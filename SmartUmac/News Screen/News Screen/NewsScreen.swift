@@ -23,6 +23,7 @@ class NewsScreenController:UITableViewController {
         tableView.register(NewsViewCell.self, forCellReuseIdentifier: cellId)
         self.tableView.rowHeight = UITableViewAutomaticDimension;
         self.tableView.estimatedRowHeight = 100;
+        
         setHeaderView()
     }
     
@@ -83,7 +84,6 @@ class NewsScreenController:UITableViewController {
                         var totalContent = "\n"
                         
                         for elem in elems {
-                            try print(elem.text())
                             try totalContent += elem.text()
                             totalContent += "\n"
                         }
@@ -140,7 +140,8 @@ class NewsScreenController:UITableViewController {
         
         scrollViewController.scrollView?.contentSize = CGSize(width: CGFloat(imageLinks.count) * scrollViewController.frame.width, height: scrollViewController.frame.height)
         
-        scrollViewController.featurePageControl.numberOfPages = imageLinks.count
+        scrollViewController.pagesLabel.text = "1/\(imageLinks.count)"
+        scrollViewController.imagesCount = imageLinks.count
         
         for (index, link) in imageLinks.enumerated(){
             

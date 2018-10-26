@@ -16,6 +16,8 @@ class NewsScreenScrollViewController:UIView, UIScrollViewDelegate{
     
     var news:[News]?
     
+    var imagesCount:Int = 0
+    
     var featurePageControl:UIPageControl = {
         var pg=UIPageControl()
         pg = UIPageControl(frame: CGRect(x:0, y:0, width: 30, height: 10))
@@ -32,10 +34,20 @@ class NewsScreenScrollViewController:UIView, UIScrollViewDelegate{
     var newsTitles = [String]()
     var imageLinks = [String]()
     
+    var pagesLabel:UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        //label.text = "1/3"
+        label.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.layer.masksToBounds = true
+        label.layer.cornerRadius = 5
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        //timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
         
         self.scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height))
         self.scrollView?.delegate = self
@@ -43,19 +55,16 @@ class NewsScreenScrollViewController:UIView, UIScrollViewDelegate{
         
         self.scrollView?.isPagingEnabled = true
         self.scrollView?.isUserInteractionEnabled = true
-        //loadFeatures()
-        
-        //featurePageControl.numberOfPages = 3
-        
+      
         addSubview(scrollView!)
         bringSubview(toFront: scrollView!)
-        addSubview(featurePageControl)
-        bringSubview(toFront: featurePageControl)
-            
+     
+        addSubview(pagesLabel)
         
-        featurePageControl.topAnchor.constraint(equalTo: self.topAnchor, constant: self.frame.height - (featurePageControl.frame.height) - 40).isActive = true
-        featurePageControl.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0).isActive = true
-        
+        pagesLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 40).isActive = true
+        pagesLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -10).isActive = true
+        pagesLabel.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        pagesLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
         
     }
@@ -74,59 +83,11 @@ class NewsScreenScrollViewController:UIView, UIScrollViewDelegate{
         }, completion: nil)
     }
     
-    func downloadImages(){
-        
-        
-        if let newsArray = news{
-            for new in newsArray[...2]{
-                print(new)
-                if let link = new.common?.imageUrls?[0]{
-                    imageLinks.append(link)
-                }
-                if let details = new.details {
-                    
-                    if let title = details[0].title{
-                        newsTitles.append(title)
-                    }
-                    
-                }
-            }
-        }
-        
-        self.scrollView?.contentSize = CGSize(width: CGFloat(imageLinks.count) * self.frame.width, height: self.frame.height)
-        
-        //download from links
-        for (index, link) in imageLinks.enumerated(){
-            
-            let url = URL(string: link)
-            
-            URLSession.shared.dataTask(with: url!) { (data, response, err) in
-                
-                guard let data  = data else {return}
-                
-                DispatchQueue.main.async {
-                    
-                    let image =  UIImage(data: data)
-                    
-                    let featureView = UIView(frame: CGRect(x:0, y:0, width: self.frame.width, height:self.frame.height))
-                    let imageView = UIImageView(frame: CGRect(x:0, y:0, width:self.frame.width, height:self.frame.height))
-                    imageView.image = image
-                    featureView.addSubview(imageView)
-                    self.scrollView?.addSubview(featureView)
-                    featureView.frame.size.width = self.bounds.size.width
-                    featureView.frame.origin.x = CGFloat(index) * self.bounds.size.width
-                    
-                }
-                
-                }.resume()
-        }
-        
-    }
-    
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
-        featurePageControl.currentPage = Int(scrollView.contentOffset.x / scrollView.frame.size.width)
+        //featurePageControl.currentPage = Int(scrollView.contentOffset.x / scrollView.frame.size.width)
+        pagesLabel.text = String(Int(scrollView.contentOffset.x / scrollView.frame.size.width) +  1) + "/\(imagesCount)"
         
     }
 }

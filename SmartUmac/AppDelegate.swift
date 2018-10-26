@@ -24,6 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabViewController.tabBar.tintColor = UIColor.red
         
         let NewsViewController = NewsTableViewController()
+        NewsViewController.title = "UM NEWS"
+        let newsImage = UIImage(named: "news")
+        let newsImageSelected = UIImage(named: "news_selected")
+        NewsViewController.tabBarItem = UITabBarItem(title: "UM NEWS", image: newsImage, selectedImage: newsImageSelected)
         
         let controllers = [NewsViewController]
         

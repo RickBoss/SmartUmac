@@ -392,6 +392,7 @@ class NewsTableViewController: UITableViewController{
         
         
         self.scrollView = MainNewsScrollViewController(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 300))
+        self.scrollView?.parentView = self
         expandButton = UIView(frame: CGRect(x: 0, y: (self.scrollView?.frame.height)!, width: self.view.frame.width, height: 30))
         expandButton.backgroundColor = .red
         

@@ -11,7 +11,11 @@ import UIKit
 
 class MainNewsScrollViewController:UIView, UIScrollViewDelegate{
     
+    var parentView:NewsTableViewController?
+    
     var scrollView:UIScrollView?
+    
+    var bannerNews:[News] = []
     
     var timer = Timer()
     
@@ -115,6 +119,7 @@ class MainNewsScrollViewController:UIView, UIScrollViewDelegate{
         
         if let newsArray = news{
             for new in newsArray[...2]{
+                bannerNews.append(new)
                 if let link = new.common?.imageUrls?[0]{
                     imageLinks.append(link)
                 }
@@ -148,6 +153,9 @@ class MainNewsScrollViewController:UIView, UIScrollViewDelegate{
                     let imageView = UIImageView(frame: CGRect(x:0, y:0, width:self.frame.width, height:self.frame.height))
                     imageView.image = image
                     imageView.contentMode = .scaleAspectFit
+                    imageView.isUserInteractionEnabled = true
+                    let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped))
+                    imageView.addGestureRecognizer(tapGestureRecognizer)
                     featureView.addSubview(imageView)
                     self.scrollView?.addSubview(featureView)
                     featureView.frame.size.width = self.bounds.size.width
@@ -158,6 +166,14 @@ class MainNewsScrollViewController:UIView, UIScrollViewDelegate{
                 }.resume()
         }
         
+    }
+    
+    @objc func imageTapped(){
+        let newsScreen = NewsScreenController()
+        let new = bannerNews[Int(scrollView!.contentOffset.x / scrollView!.frame.size.width)]
+        newsScreen.news = new
+        
+        parentView?.navigationController?.pushViewController(newsScreen, animated: true)
     }
     
     
