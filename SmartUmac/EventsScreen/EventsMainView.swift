@@ -125,13 +125,14 @@ class EventsTableViewController:UITableViewController, UICollectionViewDelegate,
         cell.languageLabel.text = ""
         cell.organizerLabel.text = ""
         cell.timeLabel.text = ""
+        cell.posterIcon.image = UIImage(named: "default")
         if let totalEvents = events {
             
             if let posterLink = totalEvents[indexPath.row].common?.posterUrl {
                 //download poster
                 let url = URL(string: posterLink)
                 
-                cell.posterIcon.image = nil
+                
                 
                 if let imageFromCache = imageCache.object(forKey: posterLink as AnyObject) as? UIImage {
                     cell.posterIcon.image = imageFromCache

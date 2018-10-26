@@ -67,6 +67,7 @@ class EventsScreenController:UITableViewController{
             var contactPhone = ""
             var contactEmail = ""
             var contactFax = ""
+            var remark = ""
             
             
             if let sectionTitle = detail.locale{
@@ -307,6 +308,14 @@ class EventsScreenController:UITableViewController{
                 cell.eventLabel.attributedText = myString
             }
             
+            if let eventRemark = detail.remark{
+                remark.append(eventRemark)
+                let redAttribute = [ NSAttributedStringKey.foregroundColor: UIColor.red]
+                let eventRemarkString = NSMutableAttributedString(string: remark + "\n\n", attributes: redAttribute)
+                myString.append(eventRemarkString)
+                
+                cell.eventLabel.attributedText = myString
+            }
             
             
             
@@ -367,6 +376,11 @@ class EventsScreenController:UITableViewController{
                 }
                 }.resume()
             
+        }else {
+            headerImageVIew.image = UIImage(named: "default")
+            self.posterImage = UIImage(named: "default")
+            headerImageVIew.contentMode = .scaleAspectFit
+            self.tableView.reloadData()
         }
         
         tableView.tableHeaderView = headerView
