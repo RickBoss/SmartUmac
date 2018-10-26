@@ -219,7 +219,6 @@ class NewsTableViewController: UITableViewController{
                         guard let data  = data else {return}
                         
                         DispatchQueue.main.async {
-                            
                             let imageToCache =  UIImage(data: data)
                             
                             self.imageCache.setObject(imageToCache!, forKey: jsonString as AnyObject)
@@ -420,7 +419,7 @@ class NewsTableViewController: UITableViewController{
         if let url = URL(string: jsonUrlString) {
             var request = URLRequest(url: url)
             // Set headers
-            request.setValue("Bearer f0b642d6-6023-3421-a7e3-05d84aec3946", forHTTPHeaderField: "Authorization")
+            request.setValue("Bearer 20716610-7238-3cb2-88cc-25976bcbedbf", forHTTPHeaderField: "Authorization")
             request.setValue("application/json", forHTTPHeaderField: "Accept")
             
             URLSession.shared.dataTask(with: request) { (data, response, error) in

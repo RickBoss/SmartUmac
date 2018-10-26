@@ -18,8 +18,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        let vc = ViewController()
-        window?.rootViewController = vc
+        
+        let tabViewController = UITabBarController()
+        tabViewController.tabBar.barTintColor = UIColor.white
+        tabViewController.tabBar.tintColor = UIColor.red
+        
+        let NewsViewController = NewsTableViewController()
+        
+        let controllers = [NewsViewController]
+        
+        tabViewController.viewControllers =  controllers.map { UINavigationController(rootViewController: $0)}
+        
+        
+        window?.rootViewController = tabViewController
         window?.makeKeyAndVisible()
         
         return true
