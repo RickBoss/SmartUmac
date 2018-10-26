@@ -8,8 +8,6 @@
 
 import UIKit
 
-import UIKit
-
 class NewsTableViewController: UITableViewController{
     
     var news:[News]? // Variable to hold all the news downloaded from the API
