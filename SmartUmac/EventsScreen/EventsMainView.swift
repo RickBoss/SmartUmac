@@ -277,8 +277,8 @@ class EventsTableViewController:UITableViewController, UICollectionViewDelegate,
     @objc func donePressed() {
         monthField.resignFirstResponder()
         let month = months.index(of: monthField.text!)!
-        dateFrom = "2018-\(month+1)-01"
-        dateTo = "2018-\(month+1)-\(daysInMonth[month])"
+        dateFrom = "2018-\(String(format: "%02d", month+1))-01"
+        dateTo = "2018-\(String(format: "%02d", month+1))-\(daysInMonth[month])"
         print(dateFrom)
         print(dateTo)
         readJson { (downloaded) in
@@ -403,7 +403,7 @@ class EventsTableViewController:UITableViewController, UICollectionViewDelegate,
     
     func readJson(completion: @escaping (EventsData)->()){
         
-        let jsonUrlString = "https://api.data.umac.mo/service/media/events/v1.0.0/all?date_from=\(dateFrom)&date_to=\(dateTo)"
+        let jsonUrlString = "https://api.data.umac.mo/service/media/events/v1.0.0/all?date_from=\(dateFrom)&date_to=\(dateTo)&sort_by=-lastModified"
         
         
         if let url = URL(string: jsonUrlString) {

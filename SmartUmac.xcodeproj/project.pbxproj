@@ -20,6 +20,10 @@
 		8CC0A35021833DE9007F5FDE /* MainEventsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC0A34F21833DE9007F5FDE /* MainEventsScrollView.swift */; };
 		8CC0A35321833E6E007F5FDE /* EventsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC0A35221833E6E007F5FDE /* EventsScreen.swift */; };
 		8CC0A35521833E9E007F5FDE /* EventPoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC0A35421833E9E007F5FDE /* EventPoster.swift */; };
+		8CC0A358218365C1007F5FDE /* MonthWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC0A357218365C1007F5FDE /* MonthWeekView.swift */; };
+		8CC0A35A218365E7007F5FDE /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC0A359218365E7007F5FDE /* CalendarViewController.swift */; };
+		8CC0A35C2183662D007F5FDE /* HolidaysModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC0A35B2183662D007F5FDE /* HolidaysModel.swift */; };
+		8CC0A35E21836C2C007F5FDE /* CalendarEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC0A35D21836C2C007F5FDE /* CalendarEvents.swift */; };
 		F302415D769A2996C7332EFB /* Pods_SmartUmac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529E3CD174043D56BC487D5A /* Pods_SmartUmac.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +46,10 @@
 		8CC0A34F21833DE9007F5FDE /* MainEventsScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEventsScrollView.swift; sourceTree = "<group>"; };
 		8CC0A35221833E6E007F5FDE /* EventsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsScreen.swift; sourceTree = "<group>"; };
 		8CC0A35421833E9E007F5FDE /* EventPoster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPoster.swift; sourceTree = "<group>"; };
+		8CC0A357218365C1007F5FDE /* MonthWeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthWeekView.swift; sourceTree = "<group>"; };
+		8CC0A359218365E7007F5FDE /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		8CC0A35B2183662D007F5FDE /* HolidaysModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidaysModel.swift; sourceTree = "<group>"; };
+		8CC0A35D21836C2C007F5FDE /* CalendarEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEvents.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				8CC0A32C21831429007F5FDE /* AppDelegate.swift */,
+				8CC0A3562183658E007F5FDE /* CalendarScreen */,
 				8CC0A34A21833D38007F5FDE /* EventsScreen */,
 				8CC0A33E218315C7007F5FDE /* News Screen */,
 				8CC0A33321831441007F5FDE /* Assets.xcassets */,
@@ -133,6 +142,17 @@
 				8CC0A35421833E9E007F5FDE /* EventPoster.swift */,
 			);
 			path = "Events Detail Screen";
+			sourceTree = "<group>";
+		};
+		8CC0A3562183658E007F5FDE /* CalendarScreen */ = {
+			isa = PBXGroup;
+			children = (
+				8CC0A357218365C1007F5FDE /* MonthWeekView.swift */,
+				8CC0A359218365E7007F5FDE /* CalendarViewController.swift */,
+				8CC0A35B2183662D007F5FDE /* HolidaysModel.swift */,
+				8CC0A35D21836C2C007F5FDE /* CalendarEvents.swift */,
+			);
+			path = CalendarScreen;
 			sourceTree = "<group>";
 		};
 		CBA2485497CD0A3806941102 /* Pods */ = {
@@ -256,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CC0A34C21833D7C007F5FDE /* EventsMainView.swift in Sources */,
+				8CC0A35E21836C2C007F5FDE /* CalendarEvents.swift in Sources */,
 				8CC0A35021833DE9007F5FDE /* MainEventsScrollView.swift in Sources */,
 				8CC0A35521833E9E007F5FDE /* EventPoster.swift in Sources */,
 				8CC0A34021831655007F5FDE /* NewsModel.swift in Sources */,
@@ -263,9 +284,12 @@
 				8CC0A35321833E6E007F5FDE /* EventsScreen.swift in Sources */,
 				8CC0A34721831E11007F5FDE /* NewsScreen.swift in Sources */,
 				8CC0A342218318F6007F5FDE /* NewsMainView.swift in Sources */,
+				8CC0A35A218365E7007F5FDE /* CalendarViewController.swift in Sources */,
 				8CC0A34421831D4D007F5FDE /* MainNewsScrollView.swift in Sources */,
 				8CC0A34921831E72007F5FDE /* NewsScreenScrollView.swift in Sources */,
 				8CC0A32D21831429007F5FDE /* AppDelegate.swift in Sources */,
+				8CC0A35C2183662D007F5FDE /* HolidaysModel.swift in Sources */,
+				8CC0A358218365C1007F5FDE /* MonthWeekView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

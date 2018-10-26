@@ -36,10 +36,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let eventsImageSelected = UIImage(named: "events_selected")
         EventsViewController.tabBarItem = UITabBarItem(title: "UM EVENTS", image: eventsImage, selectedImage: eventsImageSelected)
         
-        let controllers = [NewsViewController, EventsViewController]
+        let MyCalendarViewController = CalenderViewController()
+        MyCalendarViewController.title = "UM CALENDAR EVENTS"
+        let calendarImage = UIImage(named: "calendar")
+        let calendarImageSelected = UIImage(named: "calendar_selected")
+        MyCalendarViewController.tabBarItem = UITabBarItem(title: "UM CALENDAR", image: calendarImage, selectedImage: calendarImageSelected)
+        
+        let controllers = [NewsViewController, EventsViewController, MyCalendarViewController]
         
         tabViewController.viewControllers =  controllers.map { UINavigationController(rootViewController: $0)}
-            
+        
         window?.rootViewController = tabViewController
         window?.makeKeyAndVisible()
         

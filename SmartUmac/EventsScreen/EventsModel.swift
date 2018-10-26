@@ -11,6 +11,8 @@ import Foundation
 class EventsData:Decodable {
     var _embedded:[Event]?
     var _returned:Int?
+    var _size:Int?
+    var _total_pages:Int?
 }
 
 class Event:Decodable {

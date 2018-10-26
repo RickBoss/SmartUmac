@@ -138,6 +138,7 @@ class EventsScreenController:UITableViewController{
                 
             }
             
+            
             if let date = event?.common?.dateFrom {
                 dateString.append(date.components(separatedBy: "T")[0])
                 let blueAttribute = [ NSAttributedStringKey.foregroundColor: UIColor.blue ]
