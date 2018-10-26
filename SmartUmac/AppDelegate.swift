@@ -29,11 +29,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let newsImageSelected = UIImage(named: "news_selected")
         NewsViewController.tabBarItem = UITabBarItem(title: "UM NEWS", image: newsImage, selectedImage: newsImageSelected)
         
-        let controllers = [NewsViewController]
+        
+        let EventsViewController = EventsTableViewController()
+        EventsViewController.title = "UM EVENTS"
+        let eventsImage = UIImage(named: "events")
+        let eventsImageSelected = UIImage(named: "events_selected")
+        EventsViewController.tabBarItem = UITabBarItem(title: "UM EVENTS", image: eventsImage, selectedImage: eventsImageSelected)
+        
+        let controllers = [NewsViewController, EventsViewController]
         
         tabViewController.viewControllers =  controllers.map { UINavigationController(rootViewController: $0)}
-        
-        
+            
         window?.rootViewController = tabViewController
         window?.makeKeyAndVisible()
         
