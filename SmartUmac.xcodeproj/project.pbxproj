@@ -12,9 +12,14 @@
 		8CC0A33421831441007F5FDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CC0A33321831441007F5FDE /* Assets.xcassets */; };
 		8CC0A33721831441007F5FDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC0A33521831441007F5FDE /* LaunchScreen.storyboard */; };
 		8CC0A34021831655007F5FDE /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC0A33F21831655007F5FDE /* NewsModel.swift */; };
+		8CC0A342218318F6007F5FDE /* NewsMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC0A341218318F6007F5FDE /* NewsMainView.swift */; };
+		F302415D769A2996C7332EFB /* Pods_SmartUmac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529E3CD174043D56BC487D5A /* Pods_SmartUmac.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		130075661A0B6135605235D9 /* Pods-SmartUmac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartUmac.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartUmac/Pods-SmartUmac.release.xcconfig"; sourceTree = "<group>"; };
+		529E3CD174043D56BC487D5A /* Pods_SmartUmac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartUmac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EF85DC405BD96BAA565303B /* Pods-SmartUmac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartUmac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartUmac/Pods-SmartUmac.debug.xcconfig"; sourceTree = "<group>"; };
 		8CC0A32921831429007F5FDE /* SmartUmac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartUmac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CC0A32C21831429007F5FDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CC0A32E21831429007F5FDE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +27,7 @@
 		8CC0A33621831441007F5FDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8CC0A33821831441007F5FDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CC0A33F21831655007F5FDE /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
+		8CC0A341218318F6007F5FDE /* NewsMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsMainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F302415D769A2996C7332EFB /* Pods_SmartUmac.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3CEB91A9D9A60B215FD71452 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				529E3CD174043D56BC487D5A /* Pods_SmartUmac.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8CC0A32021831429007F5FDE = {
 			isa = PBXGroup;
 			children = (
 				8CC0A32B21831429007F5FDE /* SmartUmac */,
 				8CC0A32A21831429007F5FDE /* Products */,
+				CBA2485497CD0A3806941102 /* Pods */,
+				3CEB91A9D9A60B215FD71452 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,8 +85,18 @@
 			isa = PBXGroup;
 			children = (
 				8CC0A33F21831655007F5FDE /* NewsModel.swift */,
+				8CC0A341218318F6007F5FDE /* NewsMainView.swift */,
 			);
 			path = "News Screen";
+			sourceTree = "<group>";
+		};
+		CBA2485497CD0A3806941102 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5EF85DC405BD96BAA565303B /* Pods-SmartUmac.debug.xcconfig */,
+				130075661A0B6135605235D9 /* Pods-SmartUmac.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -79,9 +106,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8CC0A33B21831441007F5FDE /* Build configuration list for PBXNativeTarget "SmartUmac" */;
 			buildPhases = (
+				4783F00E459E2EF39E2F5D4F /* [CP] Check Pods Manifest.lock */,
 				8CC0A32521831429007F5FDE /* Sources */,
 				8CC0A32621831429007F5FDE /* Frameworks */,
 				8CC0A32721831429007F5FDE /* Resources */,
+				1CF037343FAF6F9E86791B78 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -137,6 +166,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1CF037343FAF6F9E86791B78 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SmartUmac/Pods-SmartUmac-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SmartUmac/Pods-SmartUmac-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4783F00E459E2EF39E2F5D4F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SmartUmac-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8CC0A32521831429007F5FDE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -144,6 +212,7 @@
 			files = (
 				8CC0A34021831655007F5FDE /* NewsModel.swift in Sources */,
 				8CC0A32F21831429007F5FDE /* ViewController.swift in Sources */,
+				8CC0A342218318F6007F5FDE /* NewsMainView.swift in Sources */,
 				8CC0A32D21831429007F5FDE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +347,7 @@
 		};
 		8CC0A33C21831441007F5FDE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5EF85DC405BD96BAA565303B /* Pods-SmartUmac.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -296,6 +366,7 @@
 		};
 		8CC0A33D21831441007F5FDE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 130075661A0B6135605235D9 /* Pods-SmartUmac.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

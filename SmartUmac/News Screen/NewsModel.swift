@@ -1,8 +1,8 @@
 //
 //  Model.swift
-//  umacapi
+//  SmartUmac
 //
-//  Created by Ricardo on 05/10/2018.
+//  Created by Ricardo on 26/10/2018.
 //  Copyright © 2018 Ricardo. All rights reserved.
 //
 
