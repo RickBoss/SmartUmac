@@ -18,10 +18,6 @@ The following dependencies need to be installed:
 
 SwiftSoup - This is used to parse the html content of the News api
 
-```
-Give examples
-```
-
 ### Installing
 
 To install swiftsoup first you need to install cocoapods - https://cocoapods.org/
@@ -52,3 +48,15 @@ pod install
 
 And you are all set!
 
+### APIs
+
+My app uses 3 APIs:
+
+- UM NEWS
+- UM EVENTS
+- PUBLIC HOLIDAYS
+
+The app is organized in 3 tabs, one for the News API, one for the Events API
+and one for the Holidays and Events API combined in a calendar that shows
+which days have activities and allows these calendar days to be clickable and
+show the activities happening that day
