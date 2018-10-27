@@ -84,7 +84,7 @@ class MainNewsScrollViewController:UIView, UIScrollViewDelegate{
         addSubview(bannerView)
         bringSubview(toFront: bannerView)
         self.addConstraintsWithFormat(format: "V:[v0(60)]|", views: bannerView)
-        self.addConstraintsWithFormat(format: "H:|[v0]|", views: bannerView)
+        self.addConstraintsWithFormat(format: "H:|-10-[v0]-10-|", views: bannerView)
         
         addSubview(pagesLabel)
         
