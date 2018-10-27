@@ -60,3 +60,5 @@ The app is organized in 3 tabs, one for the News API, one for the Events API
 and one for the Holidays and Events API combined in a calendar that shows
 which days have activities and allows these calendar days to be clickable and
 show the activities happening that day
+
+![alt text](https://github.com/RickBoss/SmartUmac/blob/master/Presentation/News%20Screen%20Main.png)
