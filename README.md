@@ -61,4 +61,5 @@ and one for the Holidays and Events API combined in a calendar that shows
 which days have activities and allows these calendar days to be clickable and
 show the activities happening that day
 
-![alt text](https://github.com/RickBoss/SmartUmac/blob/master/Presentation/News%20Screen%20Main.png)
+![alt text](https://github.com/RickBoss/SmartUmac/blob/master/Presentation/News%20Screen%20Main.png) ![alt text](https://github.com/RickBoss/SmartUmac/blob/master/Presentation/Screen%20Shot%202018-10-27%20at%207.20.14%20AM.png)
+![alt text](https://github.com/RickBoss/SmartUmac/blob/master/Presentation/Screen%20Shot%202018-10-27%20at%207.21.02%20AM.png)
