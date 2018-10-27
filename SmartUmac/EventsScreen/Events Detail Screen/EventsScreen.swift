@@ -188,7 +188,7 @@ class EventsScreenController:UITableViewController{
                 
             }
             
-            if let coorganizers = detail.organizedBys{
+            if let coorganizers = detail.coorganizers{
                 
                 for (i, coorganizer) in coorganizers.enumerated() {
                     if i != coorganizers.count - 1{

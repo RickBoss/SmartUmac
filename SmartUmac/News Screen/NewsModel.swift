@@ -1,5 +1,5 @@
 //
-//  Model.swift
+//  NewsModel.swift
 //  SmartUmac
 //
 //  Created by Ricardo on 26/10/2018.
